@@ -1,6 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'mine.dart';
+import 'account.dart';
 import 'explore.dart';
 import 'create.dart';
 
@@ -80,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MyCreations()),
+                        MaterialPageRoute(builder: (context) => MyCreation()),
                       );
                     },
                   ),
@@ -119,8 +121,28 @@ class _MyHomePageState extends State<MyHomePage> {
           ]
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-
+      bottomNavigationBar: Container(
+        height: 40,
+        color: Colors.black,
+        child: Center(
+          child: RichText(
+            text: TextSpan(
+                text: 'Already a member? Sign in',
+                style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                    color: Colors.blue
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => Account()
+                    )
+                    );
+                  }
+            ),
+          ),
+        ),
       ),
     );
   }

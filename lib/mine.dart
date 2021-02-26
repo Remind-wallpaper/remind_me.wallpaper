@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class MyCreations extends StatefulWidget {
+class MyCreation extends StatefulWidget {
   @override
-  _MyCreationsState createState() => _MyCreationsState();
+  _MyCreationState createState() => _MyCreationState();
 }
 
-class _MyCreationsState extends State<MyCreations> {
+class _MyCreationState extends State<MyCreation> {
   @override
   Widget build(BuildContext context) {
     return Container();
